@@ -5,15 +5,15 @@
    <div class="box">
            <% for(var i=0;i<=newListItems.length-1;i++) {%>
             <div class="item">
-                <form action="/remove" method="post">  
-                    <button type="submit" name="remove" value="<%=newListItems[i]%>" >-</button>
+                <form action="/remove/<%=dayName%>" method="post">  
+                    <button type="submit" name="remove" value="<%=newListItems[i].name%>" >-</button>
                 </form>
                 <p>
-                    <%= newListItems[i]%>
+                    <%= newListItems[i].name %>
                 </p>
             </div>
             <% } %>   
-            <form action="/" method="post">
+            <form action="/<%=dayName%>" method="post">
                 <input type="text" name="newItem" placeholder="New item here">
                 <button type="submit">+</button>
            </form>
