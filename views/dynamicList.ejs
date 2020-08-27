@@ -1,11 +1,12 @@
-<%- include("header") -%> 
-   <div class="box" id="heading">
+<% - include("header") %>
+
+<div class="box" id="heading">
     <h1><%= dayName %></h1>
    </div>
    <div class="box">
            <% for(var i=0;i<=newListItems.length-1;i++) {%>
             <div class="item">
-                <form action="/remove/<%=dayName%>" method="post">  
+                <form action="/remove" method="post">  
                     <button type="submit" name="remove" value="<%=newListItems[i].name%>" >-</button>
                 </form>
                 <p>
@@ -13,10 +14,11 @@
                 </p>
             </div>
             <% } %>   
-            <form action="/<%=dayName%>" method="post">
+            <form action="/" method="post">
                 <input type="text" name="newItem" placeholder="New item here">
                 <button type="submit">+</button>
            </form>
    </div>
-  
-<%- include("footer") -%>
+
+
+<%- include("footer") %>
